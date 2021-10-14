@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fipzer</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="dz-root"></div>
+    <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+    <script>
+      console.log("loaded");
+      DZ.init({
+        appId: "508002",
+        channelUrl: "http://zlrq2.csb.app/channel.html",
+        player: {
+          container: "player",
+          width: 800,
+          height: 300,
+          onload: function () {
+            console.log("initialized");
+          }
+        }
+      });
+      console.log("launched");
+    </script>
+  </body>
+</html>
