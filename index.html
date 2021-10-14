@@ -40,23 +40,45 @@
     <div id="dz-root"></div>
     <!--    <div id="player" style="width:100%;"></div>-->
     <script>
-        window.dzAsyncInit = function () {
+        document.onreadystatechange = function() {
 
-            DZ.init({
-                appId: '508002',
-                channelUrl: 'https://arthursw.github.io/fipzer/channel.html',
-                player: {
-                    onload: function () {
-                        //configure the player with a set of tracks
-                        //autoplay set to false
-                        DZ.player.playAlbum(2962681, false);
+            if (document.readyState == "complete") {
+                console.log('DZ init')
+                DZ.init({
+                    appId: '508002',
+                    channelUrl: 'https://arthursw.github.io/fipzer/channel.html',
+                    player: {
+                        onload: function () {
+                            console.log('DZ initialized')
+                            //configure the player with a set of tracks
+                            //autoplay set to false
+                            DZ.player.playAlbum(2962681, false);
 
-                        //DZ.player.playPlaylist(484767873);
-                        //DZ.player.playTracks(['68973465']);
+                            //DZ.player.playPlaylist(484767873);
+                            //DZ.player.playTracks(['68973465']);
+                        }
                     }
-                }
-            });
-        };
+                });
+            }
+        }
+        
+        // window.dzAsyncInit = function () {
+
+        //     DZ.init({
+        //         appId: '508002',
+        //         channelUrl: 'https://arthursw.github.io/fipzer/channel.html',
+        //         player: {
+        //             onload: function () {
+        //                 //configure the player with a set of tracks
+        //                 //autoplay set to false
+        //                 DZ.player.playAlbum(2962681, false);
+
+        //                 //DZ.player.playPlaylist(484767873);
+        //                 //DZ.player.playTracks(['68973465']);
+        //             }
+        //         }
+        //     });
+        // };
 
     </script>
     <br />
